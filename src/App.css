@@ -1,0 +1,133 @@
+.App {
+  text-align: center;
+}
+.container > h1 {
+  background-color: tan;
+  text-align: center;
+  padding:5px;
+}
+#search-div {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.left-cat-box {
+  border:1px solid red;
+  height:20vh;
+  text-align: center;
+}
+.left-cat-box-img {
+  min-height:10vh;
+  max-height:15vh;
+  min-width:10vw;
+  float: left;
+}
+#cat-details-img {
+  min-width:25vw;
+  max-width:50vw;
+  max-height:50vh;
+  box-shadow: 0px 0px 5px 5px grey;
+}
+#cat-details-main {
+  text-align: center;
+}
+#cat-details-main p {
+  font-size:24px;
+}
+#edit-delete-cont {
+  padding: 10px;
+  float: right;
+  font-size:24px;
+}
+#edit-delete-cont span {
+  padding:10px;
+  transition: box-shadow 0.5s;
+}
+#edit-delete-cont span:hover {
+  box-shadow: 0px 0px 5px 5px grey;
+  cursor: pointer;
+}
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 55%; /* Full width (cover the whole page) */
+  height: 70%; /* Full height (cover the whole page) */
+  margin: auto;
+  box-shadow: 0px 0px 10px 5px coral;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background-color: rgba(0,0,0,1); Black background with opacity */
+  background-color: white;
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+#overlay h2 {
+  padding: 5px;
+}
+.edit-box1 {
+  height:50vh;
+  width:50%;
+  padding-left: 20px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.edit-box2 {
+  padding: 10px;
+  height:50vh;
+  width:50%;
+  padding-left: 20px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.edit-box1 label {
+  font-size:24px;
+  margin: 15px;
+}
+#edit-box-main {
+  width: 80%;
+  display: flex;
+  margin: auto;
+  position: relative;
+  height: 55vh;
+  
+}
+#save-delete-cont {
+  padding: 10px;
+  float: right;
+  font-size:24px;
+  position: absolute;
+  bottom:0;
+  display: flex;
+  justify-content: flex-end;
+  width:100%;
+}
+#save-delete-cont span {
+  padding:5px;
+  transition: box-shadow 0.5s;
+}
+#save-delete-cont span:hover {
+  box-shadow: 0px 0px 5px 5px grey;
+  cursor: pointer;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
