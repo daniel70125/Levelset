@@ -64,6 +64,24 @@ class Home extends Component {
     this.setState({
       cats: filteredArr
     })
+    if (filteredArr.length === 0 ){
+      this.setState({
+        selecetdCat: [
+          {
+            "Name":"",
+          "ID":0,
+          "thumbnailUrl":"",
+          "Birthdate":"",
+          "ownerName":"",
+          "viewCount":0
+          }
+        ]
+      })
+    } else {
+      this.setState({
+        selecetdCat: JSON.parse(localStorage.getItem('cats'))[0]
+      })
+    }
   }
   updateCat(e){
     let updatedUrl = document.querySelector('#edit-thumbnail-url-input').value;
