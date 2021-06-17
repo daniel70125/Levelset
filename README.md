@@ -15,7 +15,7 @@ The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
 # Running Nodemon
-After you've ran NPM I to install the dependecies you can use Nodemon to start the server located in the 'server' folder titled 'index.js'.
+After you've ran 'npm install' to install the dependecies you can use Nodemon to start the server located in the 'server' folder titled 'index.js'.
 
 ### `npm test`
 
