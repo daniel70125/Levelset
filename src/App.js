@@ -21,33 +21,37 @@ class Home extends Component {
       }
   }
   componentDidMount(){
+    // On mount grab the cats from localStotage
     this.setState({cats: JSON.parse(localStorage.getItem('cats'))})
+    // On mount grab the first cat from the array and make them the selected cat.
     this.setState({
       selecetdCat: JSON.parse(localStorage.getItem('cats'))[0]
     })
   }
-  componentDidUpdate(ex1, ex2){
-    
-  }
+  // Open cat details overlay
   overlayOn() {
     document.getElementById("overlay").style.display = "block";
     document.querySelector('#edit-birthdate-input').value = this.state.selecetdCat.Birthdate;
   }
-  
+  // Close cat details overlay
   overlayOff() {
     document.getElementById("overlay").style.display = "none";
   }
+  
   chooseCat(e){
-    const selectedElm = JSON.parse(localStorage.getItem('cats'));
+    // Grab the localStorage cats array
+    let selectedElm = JSON.parse(localStorage.getItem('cats'));
     // Add 1 to user viewcount on click
     selectedElm[e].viewCount = selectedElm[e].viewCount + 1;
     
     // Set new cat array to local storage with updated viewcount
     localStorage.setItem('cats', JSON.stringify(selectedElm))
+    
     this.setState({
       selecetdCat: JSON.parse(localStorage.getItem('cats'))[e]
     })
   }
+  // This function changes the owner of the selected cat.
   selectOwnerName(e){
     this.setState({
       selectedOwnerName: e.target.value
@@ -55,27 +59,28 @@ class Home extends Component {
   }
   search(e){
     // Grab the cats array from local storage
-    const selectedElm = JSON.parse(localStorage.getItem('cats'));
+    let selectedElm = JSON.parse(localStorage.getItem('cats'));
 
     // Filter array depending on search and update cats arr according
     let filteredArr = selectedElm.filter((elm) => {
       return elm.Name.toLowerCase().includes(e.target.value.toLowerCase())
     })
+    
     this.setState({
       cats: filteredArr
     })
+    
+    // If filteredArr doesnt have any results give selectedCat default attributes.
     if (filteredArr.length === 0 ){
       this.setState({
-        selecetdCat: [
-          {
+        selecetdCat: {
             "Name":"",
           "ID":0,
-          "thumbnailUrl":"",
+          "thumbnailUrl":"https://static.wikia.nocookie.net/pandorahearts/images/7/70/No_image.jpg.png/revision/latest/scale-to-width-down/600?cb=20121025132440",
           "Birthdate":"",
           "ownerName":"",
           "viewCount":0
           }
-        ]
       })
     } else {
       this.setState({
@@ -83,11 +88,14 @@ class Home extends Component {
       })
     }
   }
+  
   updateCat(e){
     let updatedUrl = document.querySelector('#edit-thumbnail-url-input').value;
     let updatedName = document.querySelector('#edit-name-input').value;
     let updatedBirthday = document.querySelector('#edit-birthdate-input').value;
-    const selectedElm = JSON.parse(localStorage.getItem('cats'));
+    let selectedElm = JSON.parse(localStorage.getItem('cats'));
+
+    // Grab the seleceted cat and update it with new values;
     selectedElm[this.state.selecetdCat.ID] = {
           "Name":updatedName === '' ? this.state.selecetdCat.Name : updatedName,
           "ID":this.state.selecetdCat.ID,
@@ -96,16 +104,19 @@ class Home extends Component {
           "ownerName":this.state.selectedOwnerName === '' ? this.state.selecetdCat.ownerName : this.state.selectedOwnerName,
           "viewCount":this.state.selecetdCat.viewCount
     }
+    // Set new cats array to localStorage
     localStorage.setItem('cats', JSON.stringify(selectedElm))
     window.location.reload();
   }
+
   deleteCat(e){
-    const selectedElm = JSON.parse(localStorage.getItem('cats'));
+    let selectedElm = JSON.parse(localStorage.getItem('cats'));
     selectedElm.splice(this.state.selecetdCat.ID, 1)
     localStorage.setItem('cats', JSON.stringify(selectedElm))
     window.location.reload();
   }
   render() { 
+    console.log(this.state);
     // If there are no cats array on localStorage make one
     if (!localStorage.cats){
       const catObject = [
@@ -152,10 +163,8 @@ class Home extends Component {
       ]
       localStorage.setItem('cats', JSON.stringify(catObject))
     }
-    const selectedElm = JSON.parse(localStorage.getItem('cats'));
-    selectedElm.forEach((elm, index) => {
-      elm.ID = index
-    })
+
+    let selectedElm = JSON.parse(localStorage.getItem('cats'));
     localStorage.setItem('cats', JSON.stringify(selectedElm))
 
     // Render cats object
@@ -167,9 +176,13 @@ class Home extends Component {
       </div>
       }
     )
+
+    // Render owner names
     const ownerNames = this.state.cats.map((elm, index) => {
       return <option key={index} value={elm.ownerName}>{elm.ownerName}</option>
     })
+
+
     return ( 
       <div className='container'>
         <h1>Cats</h1>
