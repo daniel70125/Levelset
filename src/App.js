@@ -27,6 +27,11 @@ class Home extends Component {
     this.setState({
       selecetdCat: JSON.parse(localStorage.getItem('cats'))[0]
     })
+
+    let body=document.getElementsByTagName('body')[0]
+    body.addEventListener('click', () => {
+      console.log('ok')
+    })
   }
   // Open cat details overlay
   overlayOn() {
@@ -182,7 +187,6 @@ class Home extends Component {
       return <option key={index} value={elm.ownerName}>{elm.ownerName}</option>
     })
 
-
     return ( 
       <div className='container'>
         <h1>Cats</h1>
@@ -227,6 +231,7 @@ class Home extends Component {
                 <span onClick={(e) => this.updateCat(e)}>Save</span> <span>|</span> <span onClick={(e) => this.deleteCat(e)}>Delete</span>
               </div>
             </div>
+            <button onClick={() => this.overlayOff()} type="button" class="btn-close" aria-label="Close">Close</button>
           </div>
         </div>
       </div>

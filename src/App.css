@@ -67,6 +67,14 @@
 #overlay h2 {
   padding: 5px;
 }
+.btn-close {
+  border-radius: 50%;
+  width: 50px;
+  padding: 5px;
+  position: absolute;
+  top: -2vh;
+  right: -1.5vw;
+}
 .edit-box1 {
   height:50vh;
   width:50%;
