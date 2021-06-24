@@ -66,6 +66,7 @@
 }
 #overlay h2 {
   padding: 5px;
+  background-color: beige;
 }
 .btn-close {
   border-radius: 50%;

@@ -193,7 +193,7 @@ class Home extends Component {
         <div className="row">
           <div id='div-left' className="col-sm-12, col-lg-4">
             <div id='search-div'>
-              <input onChange={(e) => this.search(e)} className="form-control" type="text" placeholder="Search.." />
+              <input style={{"fontSize":"20px"}} onChange={(e) => this.search(e)} className="form-control" type="text" placeholder="Search.." />
             </div>
             {cats}
           </div>
