@@ -13,9 +13,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+### `Running the server`
+This project uses Node.js as the server. In the terminal run `node server/index.js` to start the server. Changes to the backend will update if you make any edits.
 
-# Running Nodemon
-After you've ran 'npm install' to install the dependecies you can use Nodemon to start the server located in the 'server' folder titled 'index.js'.
+### `Running Nodemon`
+If you have Nodemon installed you can run `nodemon server/index.js` to run the server.
 
 ### `npm test`
 
