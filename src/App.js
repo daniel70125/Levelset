@@ -184,6 +184,7 @@ class Home extends Component {
         <img alt={elm.Name} className='col-sm-4, left-cat-box-img' src={elm.thumbnailUrl} />
         <span>Name: {elm.Name}</span>
         <p className='left-box-p'>Birthdate: {elm.Birthdate}</p>
+        <p>Owner Name:{elm.ownerName}</p>
       </div>
       }
     )
@@ -197,12 +198,15 @@ class Home extends Component {
       <div className='container'>
         <h1>Cats</h1>
         <div className="row">
+          {/* Left div */}
           <div id='div-left' className="col-sm-12, col-lg-4">
             <div id='search-div'>
               <input style={{"fontSize":"20px"}} onChange={(e) => this.search(e)} className="form-control" type="text" placeholder="Search.." />
             </div>
             {cats}
           </div>
+
+          {/* Right div */}
           <div id='div-right' className="col-sm-12, col-lg-8">
             <div id='cat-details-main'>
               <img id='cat-details-img' alt='alt' src={this.state.selecetdCat.thumbnailUrl} />
@@ -215,6 +219,7 @@ class Home extends Component {
               </div>
             </div>
           </div>
+          {/* Overlay to edit cat */}
           <div id='overlay'>
             <h2>Edit Cat</h2>
             <div id='edit-box-main'>
@@ -239,6 +244,7 @@ class Home extends Component {
             </div>
             <button onClick={() => this.overlayOff()} type="button" class="btn-close" aria-label="Close">Close</button>
           </div>
+
         </div>
       </div>
      );

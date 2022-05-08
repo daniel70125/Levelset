@@ -1,6 +1,15 @@
 .App {
   text-align: center;
 }
+.row {
+  display: flex;
+}
+#div-left {
+  width:50vw;
+}
+#div-right {
+  width:45vw;
+}
 .container > h1 {
   background-color: tan;
   text-align: center;
@@ -16,7 +25,12 @@
   box-shadow: 0px 0px 5px 5px grey;
   height: 20vh;
   text-align: center;
-  margin: 10px 0;
+  margin: 25px 0;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.left-cat-box:hover {
+  box-shadow: 0px 0px 5px 5px green;
 }
 .left-cat-box-img {
   min-height:10vh;
@@ -75,6 +89,7 @@
   position: absolute;
   top: -2vh;
   right: -1.5vw;
+  cursor: pointer;
 }
 .edit-box1 {
   height:50vh;
@@ -124,20 +139,4 @@
 #save-delete-cont span:hover {
   box-shadow: 0px 0px 5px 5px grey;
   cursor: pointer;
-}
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
