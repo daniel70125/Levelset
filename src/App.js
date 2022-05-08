@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
+import Cat1 from "./Images/Cat-1.jpeg";
+import Cat2 from "./Images/Cat-2.jpeg";
+import Cat3 from "./Images/Cat-3.jpeg";
+import Cat4 from "./Images/Cat-4.jpeg";
+import Cat5 from "./Images/Cat-5.jpeg";
 
 class Home extends Component {
   constructor(props) {
@@ -128,7 +133,7 @@ class Home extends Component {
         {
           "Name":"Adam",
           "ID":0,
-          "thumbnailUrl":"./Images/Cat-1.jpeg",
+          "thumbnailUrl":Cat1,
           "Birthdate":"2011-01-01",
           "ownerName":"Esther",
           "viewCount":0
@@ -136,7 +141,7 @@ class Home extends Component {
         {
           "Name":"Bernard",
           "ID":1,
-          "thumbnailUrl":"./Images/Cat-2.jpeg",
+          "thumbnailUrl":Cat2,
           "Birthdate":"2012-02-02",
           "ownerName":"Darkayla",
           "viewCount":0
@@ -144,7 +149,7 @@ class Home extends Component {
         {
           "Name":"Calvin",
           "ID":2,
-          "thumbnailUrl":"./Images/Cat-3.jpeg",
+          "thumbnailUrl":Cat3,
           "Birthdate":"2013-03-03",
           "ownerName":"Cordell",
           "viewCount":0
@@ -152,7 +157,7 @@ class Home extends Component {
         {
           "Name":"Daniel",
           "ID":3,
-          "thumbnailUrl":"./Images/Cat-4.jpeg",
+          "thumbnailUrl":Cat4,
           "Birthdate":"2014-04-04",
           "ownerName":"Bishop",
           "viewCount":0
@@ -160,7 +165,8 @@ class Home extends Component {
         {
           "Name":"Ezekiel",
           "ID":4,
-          "thumbnailUrl":"./Images/Cat-5.jpeg",
+          "thumbnailUrl":Cat5,
+          
           "Birthdate":"2015-05-05",
           "ownerName":"Alexander",
           "viewCount":0
